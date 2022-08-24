@@ -9,7 +9,7 @@
     <version>0.1.0.0</version>
 
     <name>Shadow WebDriver</name>
-    <description>WebDriver wrapper that can handle shadow DOM</description>
+    <description>WebDriver wrapper that can handle shadow DOM automation</description>
 
     <licenses>
         <license>

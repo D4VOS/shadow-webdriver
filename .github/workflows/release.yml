@@ -30,8 +30,4 @@ jobs:
                     artifacts: "${{ github.workspace }}/target/*.jar"
                     token: ${{ secrets.GITHUB_TOKEN }}
             -   name: Publish to the Maven Central Repository
-                run: |
-                    mvn \
-                      --no-transfer-progress \
-                      --batch-mode \
-                      deploy -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+                run: mvn -DskipTests deploy -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}

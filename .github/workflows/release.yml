@@ -6,6 +6,10 @@ on:
 jobs:
     publish:
         runs-on: ubuntu-latest
+        env:
+            MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+            MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+            MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
         steps:
             -   uses: actions/checkout@v2
             -   name: Set up Java for publishing to Maven Central Repository
@@ -17,10 +21,6 @@ jobs:
                     server-password: MAVEN_PASSWORD
                     gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
                     gpg-passphrase: MAVEN_GPG_PASSPHRASE
-                env:
-                    MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-                    MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-                    MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
             -   name: build artifact
                 run: mvn clean package
             -   name: Create release
@@ -34,4 +34,4 @@ jobs:
                     mvn \
                       --no-transfer-progress \
                       --batch-mode \
-                      deploy -Darguments=-Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} -Dmaven.test.skip
+                      deploy -Dmaven.test.skip

@@ -34,4 +34,4 @@ jobs:
                     mvn \
                       --no-transfer-progress \
                       --batch-mode \
-                      deploy -Dmaven.test.skip -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }}
+                      deploy -Dmaven.test.skip -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}

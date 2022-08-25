@@ -7,8 +7,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class TestBase {
+    private static final Logger logger = LoggerFactory.getLogger(TestBase.class);
     protected static WebDriver driver = null;
 
     @BeforeAll
@@ -24,11 +27,12 @@ public abstract class TestBase {
             driver = new ChromeDriver(options);
         } // TODO: finish for other browser
         driver = new ShadowDriver(driver);
-        driver.manage().window().maximize();
+        logger.info("Initialized {} WebDriver", browser);
     }
 
     @AfterAll
     public static void tearDown() {
+        logger.info("Quiting driver..");
         driver.quit();
     }
 }

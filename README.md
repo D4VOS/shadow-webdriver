@@ -4,7 +4,8 @@
 
 ### What is it?
 
-It's simple WebDriver wrapper, based on [sukgu's Shadow Selenium Automation](https://github.com/sukgu/shadow-automation-selenium) project.
+It's simple WebDriver wrapper, based
+on [sukgu's Shadow Selenium Automation](https://github.com/sukgu/shadow-automation-selenium) project.
 
 Shadow WebDriver can be used as a normal WebDriver.
 Supports Shadow and regular DOMs.
@@ -14,7 +15,7 @@ It doesn't need `@FindElementBy` annotations in Page Objects. With that wrapper 
 
 ### How use it?
 
-Initialize WebDriver as usual: 
+Initialize WebDriver as usual:
 
 `WebDriver driver = new ChromeDriver(); // EdgeDriver(), GeckoDriver() etc.`
 

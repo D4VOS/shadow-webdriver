@@ -29,9 +29,9 @@ public class SelectorProvider {
 
     public static String extractSelector(By by) {
         return by.toString()
-                .replaceAll("By.*: ", "")
-                .replace("\"", "")
-                .replace("\\", "\\\\");
+            .replaceAll("By.*: ", "")
+            .replace("\"", "")
+            .replace("\\", "\\\\");
     }
 }
 

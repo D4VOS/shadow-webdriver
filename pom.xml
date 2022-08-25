@@ -35,6 +35,7 @@
         <shadow-automation.version>0.1.4.1</shadow-automation.version>
         <junit.version>5.9.0</junit.version>
         <selenium.version>4.4.0</selenium.version>
+        <logback.version>1.2.11</logback.version>
     </properties>
 
     <dependencies>
@@ -85,6 +86,12 @@
             <version>${selenium.version}</version>
         </dependency>
         <!-- endregion -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <distributionManagement>

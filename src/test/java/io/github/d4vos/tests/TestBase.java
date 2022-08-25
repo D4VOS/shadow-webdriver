@@ -20,6 +20,7 @@ public abstract class TestBase {
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--headless");
+            options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
         } // TODO: finish for other browser
         driver = new ShadowDriver(driver);

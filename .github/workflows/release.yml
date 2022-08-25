@@ -7,13 +7,9 @@ jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-            -   uses: actions/checkout@v2
+            -   uses: actions/checkout@v3
             -   name: Set up Java for publishing to Maven Central Repository
-                uses: actions/setup-java@v1
-                env:
-                    MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-                    MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-                    MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+                uses: actions/setup-java@v3
                 with:
                     java-version: 11
                     server-id: ossrh
@@ -30,4 +26,12 @@ jobs:
                     artifacts: "${{ github.workspace }}/target/*.jar"
                     token: ${{ secrets.GITHUB_TOKEN }}
             -   name: Publish to the Maven Central Repository
-                run: mvn -DskipTests deploy -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+                run: |
+                    mvn \
+                      --no-transfer-progress \
+                      --batch-mode \
+                      deploy
+                env:
+                    MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+                    MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+                    MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}

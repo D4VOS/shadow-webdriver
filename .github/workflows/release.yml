@@ -14,12 +14,6 @@ jobs:
                 uses: actions/setup-java@v1
                 with:
                     java-version: 11
-            -   name: Build artifact
-                run: mvn clean package
-            -   uses: AButler/upload-release-assets@v2.0
-                with:
-                    files: "${{ github.workspace }}/target/*.jar"
-                    repo-token: ${{ secrets.GITHUB_TOKEN }}
             -   name: Release Maven package
                 uses: samuelmeuli/action-maven-publish@v1
                 with:
@@ -27,3 +21,8 @@ jobs:
                     gpg_passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
                     nexus_username: ${{ secrets.OSSRH_USERNAME }}
                     nexus_password: ${{ secrets.OSSRH_TOKEN }}
+            -   name: Upload artifacts to GitHub release
+                uses: AButler/upload-release-assets@v2.0
+                with:
+                    files: "${{ github.workspace }}/target/*.jar"
+                    repo-token: ${{ secrets.GITHUB_TOKEN }}

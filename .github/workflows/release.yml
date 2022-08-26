@@ -14,6 +14,8 @@ jobs:
                 uses: actions/setup-java@v1
                 with:
                     java-version: 11
+            -   name: Build artifact
+                run: mvn clean package
             -   uses: AButler/upload-release-assets@v2.0
                 with:
                     files: "${{ github.workspace }}/target/*.jar"

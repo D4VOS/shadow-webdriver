@@ -17,7 +17,7 @@ It doesn't need `@FindElementBy` annotations in Page Objects. With that wrapper 
 
 Add dependency to your `POM.xml`:
 
-```
+```xml
 <dependency>
   <groupId>io.github.d4vos</groupId>
   <artifactId>shadow-webdriver</artifactId>

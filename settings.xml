@@ -1,0 +1,9 @@
+<profile>
+    <id>sign</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+        <gpg.passphrase>${env.MAVEN_GPG_PASSPHRASE}</gpg.passphrase>
+    </properties>
+</profile>

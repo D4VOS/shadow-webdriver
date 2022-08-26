@@ -6,7 +6,7 @@
 
     <groupId>io.github.d4vos</groupId>
     <artifactId>shadow-webdriver</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <name>Shadow WebDriver</name>
     <description>WebDriver wrapper that can handle shadow DOM automation</description>

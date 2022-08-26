@@ -13,6 +13,18 @@ It doesn't need `@FindElementBy` annotations in Page Objects. With that wrapper 
 
 ---
 
+### Installation
+
+Add dependency to your `POM.xml`:
+
+```
+<dependency>
+  <groupId>io.github.d4vos</groupId>
+  <artifactId>shadow-webdriver</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
 ### How use it?
 
 Initialize WebDriver as usual:

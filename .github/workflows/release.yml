@@ -1,4 +1,4 @@
-name: Release and push to Central
+name: CD
 on:
     push:
         tags:

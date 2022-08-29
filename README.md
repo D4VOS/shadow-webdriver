@@ -1,5 +1,8 @@
 # Shadow DOM Webdriver
 
+
+![Master CI](https://github.com/d4vos/shadow-webdriver/actions/workflows/build.yml/badge.svg?branch=master)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.d4vos/shadow-webdriver.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:io.github.d4vos:shadow-webdriver)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ### What is it?
